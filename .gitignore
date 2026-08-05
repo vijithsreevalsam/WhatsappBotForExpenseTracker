@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Local environment variables
+.env
+
+# WhatsApp session data
+auth_info/
+
+# Google Service Account JSON files
+whatsappexpensetrackerbot-*.json
+
+# Active session / local state sheet details
+active_sheet.json
+
+# Test files
+test*.js
+*.test.js
+
+# System files
+.DS_Store
