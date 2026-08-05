@@ -177,9 +177,6 @@ A `Dockerfile` and `docker-compose.yml` are provided if you want to deploy the b
 
 ## 🛡️ Security & Privacy Note
 All sensitive files are strictly excluded from version control using the `.gitignore` settings:
-*   **`.env`**: Holds all local configuration details and API keys.
-*   **`auth_info/`**: Stores WhatsApp authentication state and encrypted tokens.
-*   **`whatsappexpensetrackerbot-*.json`**: Google Cloud Service Account credentials keys.
-*   **`active_sheet.json`**: Remembers which sheet tab was active.
 
-Never upload any of these files to a public GitHub repository. Use `.env.example` to share variables.
+
+Never upload any of sensitive files to a public GitHub repository. Use `.env.example` to share variables.
