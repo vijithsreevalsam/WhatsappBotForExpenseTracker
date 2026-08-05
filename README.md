@@ -2,17 +2,17 @@
 
 An intelligent, AI-powered WhatsApp bot that helps couples or teams track their shared expenses directly in a WhatsApp group chat. Built using **Node.js**, **Baileys (WhatsApp Web API)**, **Gemini AI (Google Gen AI SDK)**, and **Google Sheets API**.
 
-Simply send a text (e.g., *"Grocery 120 AED paid by Viju"*) or upload a picture of a receipt, and the bot will automatically categorize it, parse the amount, and log it to your Google Sheet!
+Simply send a text (e.g., *"Grocery 120 AED paid by Alex"*) or upload a picture of a receipt, and the bot will automatically categorize it, parse the amount, and log it to your Google Sheet!
 
 ---
 
 ## 🌟 Key Features
 
-*   **💬 Natural Language Parsing**: Uses Gemini AI to understand casual text expense messages (e.g., *"Coffee 15"* or *"Sree paid 200 for electricity"*).
+*   **💬 Natural Language Parsing**: Uses Gemini AI to understand casual text expense messages (e.g., *"Coffee 15"* or *"Sam paid 200 for electricity"*).
 *   **📷 Receipt Reader (OCR)**: Upload a receipt image, and Gemini Vision AI will automatically read the total amount, merchant name, and item description.
 *   **✏️ Live Corrections**: Correct recent logs on the fly (e.g., *"Actually that coffee was 25 not 15"* or *"Row 10 amount was 150"*).
 *   **📝 Dynamic Sheet Tabs**: Switch worksheets or create new ones dynamically via chat (e.g., *"Hey bot, switch to September 2026"*).
-*   **🔍 Interactive Query & Analysis**: Ask analytical questions about your expenses (e.g., *"How much did Sree spend on food?"* or *"Break down our August expenses"*). The bot reads the Sheet data, performs calculations, and sends a markdown summary response.
+*   **🔍 Interactive Query & Analysis**: Ask analytical questions about your expenses (e.g., *"How much did Sam spend on food?"* or *"Break down our August expenses"*). The bot reads the Sheet data, performs calculations, and sends a markdown summary response.
 *   **🔒 Strict Group Security**: Listens *only* to a designated group chat configured in your settings. It ignores all other group chats and private direct messages.
 
 ---
@@ -73,14 +73,14 @@ GOOGLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n..."
 # 4. BOT PERSONALIZATION & SENSITIVE DETAILS (Local Only)
 # Enter the WhatsApp User ID digits (without @g.us/c.us) and Names of the owners.
 # Owner 1 info
-OWNER_1_ID="190769713389696"
-OWNER_1_PHONE="971556390157"
-OWNER_1_NAME="Viju"
+OWNER_1_ID="111111111111"
+OWNER_1_PHONE="1111111111"
+OWNER_1_NAME="Alex"
 
 # Owner 2 info
-OWNER_2_ID="120079048032490"
-OWNER_2_PHONE="919995465456"
-OWNER_2_NAME="Sree"
+OWNER_2_ID="222222222222"
+OWNER_2_PHONE="2222222222"
+OWNER_2_NAME="Sam"
 ```
 
 ---
@@ -126,7 +126,7 @@ Send any purchase detail. The bot will detect the amount, choose an appropriate 
     > ✅ **Expense Logged!** 💬  
     > 💰 **Amount:** AED145.50  
     > 🏷️ **Category:** Groceries  
-    > 👤 **Paid By:** Viju  
+    > 👤 **Paid By:** Alex  
     > 📝 **Note:** Carrefour groceries  
     > 📊 Saved to Google Sheet ("Sheet1")  
 
@@ -138,7 +138,7 @@ Upload a picture of a store receipt. You can also add an optional caption.
 ### 3. Modifying/Correcting a Entry
 If the bot makes a mistake, or you need to update an entry, simply say:
 *   *"Actually the coffee was 20 AED not 15"* (Updates the last logged coffee)
-*   *"Change row 15 paid by Sree"* (Updates Row 15 `Paid By` column in Google Sheet)
+*   *"Change row 15 paid by Sam"* (Updates Row 15 `Paid By` column in Google Sheet)
 *   *"Row 8 amount is 120"* (Updates Row 8 `Amount` column to 120)
 
 ### 4. Switching Active Sheets
@@ -150,10 +150,10 @@ You can manage multiple spreadsheet tabs (e.g. monthly tabs).
 
 ### 5. Analyzing Expenses
 Ask questions about your finances:
-*   *Group message:* `"how much did Viju spend on Travel?"`
+*   *Group message:* `"how much did Alex spend on Travel?"`
 *   *Bot reply:*
     > 🔍 **Analysis Request Detected**  
-    > You asked: *"how much did Viju spend on Travel?"*  
+    > You asked: *"how much did Alex spend on Travel?"*  
     > Do you want to analyze this tab? Reply **Yes** to proceed.
 *   *Group message:* `"Yes"`
 *   *Bot reply:* (Generates a clean markdown breakdown after summarizing the sheet rows)
